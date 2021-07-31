@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/allow_undo"
+            android:allowUndo="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <!--   TODO：撤销和恢复的java方法-->
+        </TextView>
+
+        <TextView
+            android:id="@+id/auto_link"
+            android:autoLink="all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.baidu.com||http://www.baidu.com
+        ||https://www.baidu.com||12312341234||123456@qq.com||" >
+            <!--    autoLink 默认样式是绿色字体加下划线，可以识别Web URL（包括http,https），
+            默认点击事件是跳转浏览器，可以识别手机号，默认点击事件是跳转到电话（小心不要拨出去）
+            可以识别email，默认点击事件是选择可以处理邮箱的邮箱类APP打开，打开后以此邮箱为收件人新建邮件-->
+            <!--    android:autoLink="email|phone|web"-->
+        </TextView>
+
+        <TextView
+            android:id="@+id/auto_size"
+            android:text="auto size"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:autoSizeMaxTextSize="80dp">
+            <!--        todo-->
+        </TextView>
+
+        <TextView
+            android:id="@+id/auto_size_preset_sizes"
+            android:text="auto_size_preset_sizes"
+            android:autoSizeTextType="uniform"
+            android:autoSizePresetSizes="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- xml属性不起作用 -->
+<!--            https://blog.csdn.net/liwenqi/article/details/96636016-->
+        </TextView>
+
+        <EditText
+            android:id="@+id/auto_text"
+            android:text="auto_text"
+            android:autoText="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- copy this -->
+        </EditText>
+
+        <TextView
+            android:id="@+id/break_strategy"
+            android:text="break strategy"
+            android:breakStrategy="balanced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- http://www.zyiz.net/tech/detail-137242.html
+            2. 三种折行策略对比
+            2.1 BREAK_STRATEGY_SIMPLE
+            简单折行。这种策略会在每一行显示尽可能多的字符，直到这一行不能显示更多字符时才进行换行，
+            同时这种策略下不会自动添加连词符（官方文档说，当一行只有一个单词并且宽度显示不下的情况下才会添加连词符，
+            不过在测试过程中并没有看到连词符）。
+
+            在进行文本编辑时，后添加的文本不会影响前面文本的布局显示，比较适合可编辑的文本。
+            EditText 默认的折行策略就是这种，因为可以避免在输入文本时由于布局刷新导致的字符跳动问题，
+            保证用户的输入体验。
+
+            2.2 BREAK_STRATEGY_BALANCED
+            平衡折行。这个策略会尽可能保证一个段落的每一行的宽度相同，必要时会添加连词符。
+
+            2.3 BREAK_STRATEGY_HIGH_QUALITY
+            高质量折行。这个策略会针对整段文本的折行进行布局优化，必要时会自动添加连词符。
+            和其他两种策略相比，这个策略会略微影响性能，并且需要更多时间进行文本布局。
+            这个策略通常比较适合只读文本，TextView 的默认折行策略就是这种。-->
+        </TextView>
+
+        <EditText
+            android:id="@+id/buffer_type"
+            android:text="buffer_type"
+            android:bufferType="editable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- copy this -->
+        </EditText>
+
+        <TextView
+            android:id="@+id/i"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!-- copy this -->
+        </TextView>
+
+    </LinearLayout>
+</ScrollView>
+
